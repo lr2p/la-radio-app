@@ -91,7 +91,10 @@ async function main() {
 
   const all = [...byId.values()].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
   await mkdir(path.dirname(memoryPath), { recursive: true });
-  await writeFile(memoryPath, JSON.stringify({ updatedAt: new Date().toISOString(), videos: all }, null, 2) + '\n');
+  // La mémoire n'est réécrite que si la liste change : sinon le workflow committerait chaque jour.
+  if (JSON.stringify(memory.videos ?? []) !== JSON.stringify(all)) {
+    await writeFile(memoryPath, JSON.stringify({ updatedAt: new Date().toISOString(), videos: all }, null, 2) + '\n');
+  }
 
   const shown = all.filter((v) => marvinShorts.has(v.id) || (v.kind === 'film' && v.publishedAt >= SINCE));
   await mkdir(path.join(root, 'public'), { recursive: true });

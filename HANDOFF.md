@@ -11,7 +11,8 @@
 | `podcasts-sync.py` + cron VPS 15 min | **déployé** (`/opt/la-radio/bin/`, `/etc/cron.d/la-radio-podcasts-sync`) | deux passages réels : 400 + 196 ajouts, 596 retitrages, 0 fichier absent |
 | L'app (PWA) | **construite et testée en local** (Chrome headless mobile, toutes les pages, lecture d'un épisode, direct EN) | `npm run build` + `vite preview` + Playwright |
 | Publication GitHub Pages | **en ligne** : https://lr2p.github.io/la-radio-app/ (dépôt public `lr2p/la-radio-app`, workflow `deploy.yml`, Pages en mode Actions) | walkthrough Playwright sur l'URL publiée : 16 podcasts, 30 épisodes, lecture, service worker enregistré, zéro erreur console |
-| Emballage store (Capacitor) | pas commencé | — |
+| Android (Capacitor) | **APK de test fabriqué dans le nuage** : workflow `android.yml` (Actions → android → Run workflow), artefact `la-radio-ai-debug-apk` | run réussi le 19/09, APK produit ; **pas encore installé sur un téléphone** |
+| iOS natif | pas commencé (compte Apple Developer requis) | — |
 
 ## ⬅️ Par quoi reprendre
 
@@ -30,10 +31,15 @@
    publique. Apple exige une catégorie iTunes : le champ `categories` du podcast est vide,
    à poser via `PUT /station/1/podcast/<id>` (`"categories": ["News", "Music|Music History"]`)
    — à tester, le format n'a pas été vérifié.
-5. **L'emballage store**, quand un compte Apple Developer et un compte Google Play
-   existent : `npm i @capacitor/core @capacitor/cli @capacitor/android @capacitor/ios`,
-   `npx cap init "La Radio AI" ai.laradio.app --web-dir dist`, un workflow GitHub Actions
-   (macOS runner = Xcode) pour signer et livrer. Rien de tout ça n'est écrit.
+5. **Android, tester l'APK** : Actions → `android` → Run workflow → télécharger l'artefact
+   `la-radio-ai-debug-apk` → l'installer sur un téléphone Android (« sources inconnues »).
+   Le projet natif est `android/` (Capacitor 8, `appId` `ai.laradio.app`, icônes générées
+   par `@capacitor/assets` depuis `assets/`). Pour le Play Store : un keystore en secret
+   GitHub, `assembleRelease`/`bundleRelease` signé, et un compte Google Play (25 $).
+6. **iOS natif**, quand un compte Apple Developer existe (99 $/an) : `npm i @capacitor/ios`,
+   `npx cap add ios`, et un workflow sur `macos-latest` (Xcode inclus) qui signe avec un
+   certificat + profil de provisionnement en secrets et pousse sur TestFlight. Rien n'est
+   écrit pour iOS ; la PWA tient lieu d'app iPhone d'ici là.
 
 ## Ce qui a été décidé, et pourquoi
 

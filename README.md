@@ -63,8 +63,9 @@ npm run build      # dist/ (PWA, service worker)
 
 ## Ce qui n'est pas fait
 
-* Pas d'app native : le Mac n'a pas Xcode. La PWA couvre iPhone et Android ; un emballage
-  Capacitor (Android APK via GitHub Actions, iOS via un compte développeur Apple) est
-  décrit dans `HANDOFF.md`.
+* Pas d'app iOS native : le Mac n'a pas Xcode et il n'y a pas de compte Apple Developer.
+  La PWA tient lieu d'app iPhone. Côté Android, le workflow `android.yml` fabrique un APK
+  de test dans le nuage (projet Capacitor dans `android/`) ; la version Play Store reste à
+  signer — voir `HANDOFF.md`.
 * Pas de notifications.
 * Les flux RSS ne sont pas encore soumis à Apple Podcasts / Spotify (voir `HANDOFF.md`).

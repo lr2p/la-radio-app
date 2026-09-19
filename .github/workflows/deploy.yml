@@ -1,0 +1,55 @@
+# Construit l'app et la publie sur GitHub Pages.
+# Déclenché à chaque push sur main, et chaque jour à 06:20 UTC pour rafraîchir la
+# liste des vidéos YouTube (scripts/videos.mjs) — la mémoire data/videos.json est
+# recommitée quand elle change.
+name: deploy
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '20 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Recenser les vidéos YouTube
+        run: node scripts/videos.mjs
+      - name: Mémoriser le recensement
+        run: |
+          if ! git diff --quiet -- data/videos.json; then
+            git config user.name "la-radio-app bot"
+            git config user.email "bot@la-radio.ai"
+            git add data/videos.json
+            git commit -m "vidéos : recensement du $(date -u +%Y-%m-%d)"
+            git push
+          fi
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

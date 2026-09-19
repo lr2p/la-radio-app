@@ -1,0 +1,148 @@
+import type { Lang } from './config';
+
+const STRINGS = {
+  fr: {
+    tabs: { live: 'Direct', podcasts: 'Podcasts', videos: 'Vidéos', about: 'À propos' },
+    live: {
+      title: 'En direct',
+      play: 'Écouter le direct',
+      pause: 'Mettre en pause',
+      loading: 'Connexion…',
+      nowPlaying: 'À l’antenne',
+      next: 'À suivre',
+      history: 'Passés récemment',
+      listeners: (n: number) => (n <= 1 ? `${n} auditeur` : `${n} auditeurs`),
+      station: 'Antenne',
+      unavailable: 'Antenne injoignable pour le moment.',
+      liveDj: 'En direct',
+    },
+    podcasts: {
+      title: 'Podcasts',
+      subtitle: 'Toutes les émissions, telles qu’elles sont passées à l’antenne.',
+      inFrench: 'En français',
+      inEnglish: 'En anglais',
+      episodes: (n: number) => (n <= 1 ? `${n} épisode` : `${n} épisodes`),
+      empty: 'Aucun podcast pour le moment.',
+      error: 'Impossible de charger les podcasts.',
+      retry: 'Réessayer',
+      by: 'avec',
+    },
+    show: {
+      back: 'Podcasts',
+      subscribe: 'S’abonner',
+      rss: 'Flux RSS',
+      copy: 'Copier le lien',
+      copied: 'Lien copié',
+      latest: 'Derniers épisodes',
+      resume: 'Reprendre',
+      played: 'Écouté',
+      loadMore: 'Voir plus',
+      noEpisodes: 'Pas encore d’épisode.',
+      aired: 'Diffusé le',
+    },
+    videos: {
+      title: 'Vidéos',
+      subtitle: 'Les films de Marvin : un disque, une histoire.',
+      channel: 'Voir la chaîne YouTube',
+      empty: 'Aucune vidéo pour le moment.',
+      short: 'Short',
+      film: 'Film',
+    },
+    player: {
+      live: 'Direct',
+      close: 'Fermer',
+      back15: 'Reculer de 15 secondes',
+      fwd30: 'Avancer de 30 secondes',
+      speed: 'Vitesse',
+      next: 'Épisode suivant',
+      prev: 'Épisode précédent',
+      error: 'Lecture impossible. Vérifiez votre connexion.',
+    },
+    about: {
+      title: 'À propos',
+      charter:
+        'La Radio AI est une radio animée par des intelligences artificielles. Chaque voix que vous entendez — Charlotte, Marvin, Richard, Daniel, Simon, William, Kelvin — est une IA qui parle en IA, avec sa personnalité, pour des humains : de ce que l’IA rend possible, et de ce qu’elle menace.',
+      site: 'Le site',
+      install: 'Installer l’app',
+      installHint:
+        'Sur iPhone : bouton Partager, puis « Sur l’écran d’accueil ». Sur Android : menu du navigateur, puis « Installer l’application ».',
+      version: 'Version',
+    },
+    common: { play: 'Lire', pause: 'Pause', offline: 'Hors ligne' },
+  },
+  en: {
+    tabs: { live: 'Live', podcasts: 'Podcasts', videos: 'Videos', about: 'About' },
+    live: {
+      title: 'Live',
+      play: 'Listen live',
+      pause: 'Pause',
+      loading: 'Connecting…',
+      nowPlaying: 'On air',
+      next: 'Up next',
+      history: 'Recently played',
+      listeners: (n: number) => (n <= 1 ? `${n} listener` : `${n} listeners`),
+      station: 'Station',
+      unavailable: 'The station cannot be reached right now.',
+      liveDj: 'Live',
+    },
+    podcasts: {
+      title: 'Podcasts',
+      subtitle: 'Every show, exactly as it aired.',
+      inFrench: 'In French',
+      inEnglish: 'In English',
+      episodes: (n: number) => (n <= 1 ? `${n} episode` : `${n} episodes`),
+      empty: 'No podcast yet.',
+      error: 'Podcasts could not be loaded.',
+      retry: 'Retry',
+      by: 'with',
+    },
+    show: {
+      back: 'Podcasts',
+      subscribe: 'Subscribe',
+      rss: 'RSS feed',
+      copy: 'Copy link',
+      copied: 'Link copied',
+      latest: 'Latest episodes',
+      resume: 'Resume',
+      played: 'Played',
+      loadMore: 'Show more',
+      noEpisodes: 'No episode yet.',
+      aired: 'Aired on',
+    },
+    videos: {
+      title: 'Videos',
+      subtitle: 'Marvin’s films: one record, one story.',
+      channel: 'Open the YouTube channel',
+      empty: 'No video yet.',
+      short: 'Short',
+      film: 'Film',
+    },
+    player: {
+      live: 'Live',
+      close: 'Close',
+      back15: 'Back 15 seconds',
+      fwd30: 'Forward 30 seconds',
+      speed: 'Speed',
+      next: 'Next episode',
+      prev: 'Previous episode',
+      error: 'Playback failed. Check your connection.',
+    },
+    about: {
+      title: 'About',
+      charter:
+        'La Radio AI is a radio hosted by artificial intelligences. Every voice you hear — Charlotte, Marvin, Richard, Daniel, Simon, William, Kelvin — is an AI speaking as an AI, with its own personality, to humans: about what AI makes possible, and what it threatens.',
+      site: 'Website',
+      install: 'Install the app',
+      installHint:
+        'On iPhone: Share button, then “Add to Home Screen”. On Android: browser menu, then “Install app”.',
+      version: 'Version',
+    },
+    common: { play: 'Play', pause: 'Pause', offline: 'Offline' },
+  },
+} as const;
+
+export type Strings = (typeof STRINGS)['fr'];
+
+export function t(lang: Lang): Strings {
+  return STRINGS[lang] as Strings;
+}

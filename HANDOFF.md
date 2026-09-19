@@ -10,16 +10,16 @@
 | Podcasts AzuraCast (16, FR + EN, 596 épisodes) | **en production** | `GET /api/station/1/public/podcasts`, flux RSS lus, MP3 publics en 206 + CORS |
 | `podcasts-sync.py` + cron VPS 15 min | **déployé** (`/opt/la-radio/bin/`, `/etc/cron.d/la-radio-podcasts-sync`) | deux passages réels : 400 + 196 ajouts, 596 retitrages, 0 fichier absent |
 | L'app (PWA) | **construite et testée en local** (Chrome headless mobile, toutes les pages, lecture d'un épisode, direct EN) | `npm run build` + `vite preview` + Playwright |
-| Publication GitHub Pages | **bloquée** : la session n'a pas pu créer le dépôt ni committer (permission git refusée par le bac à sable) | — |
+| Publication GitHub Pages | **en ligne** : https://lr2p.github.io/la-radio-app/ (dépôt public `lr2p/la-radio-app`, workflow `deploy.yml`, Pages en mode Actions) | walkthrough Playwright sur l'URL publiée : 16 podcasts, 30 épisodes, lecture, service worker enregistré, zéro erreur console |
 | Emballage store (Capacitor) | pas commencé | — |
 
 ## ⬅️ Par quoi reprendre
 
-1. **Publier.** Dans `~/dev/la-radio-app` : `git init && git add -A && git commit`, puis
-   `gh repo create lr2p/la-radio-app --public --source=. --push` et activer Pages en mode
-   « GitHub Actions » (`gh api -X POST repos/lr2p/la-radio-app/pages -f build_type=workflow`).
-   Le workflow `deploy.yml` fait le reste ; l'app sort sur
-   `https://lr2p.github.io/la-radio-app/`. Le dépôt doit être **public** (Pages gratuit).
+1. **Ouvrir https://lr2p.github.io/la-radio-app/ sur un téléphone** et l'installer (iPhone :
+   Partager → « Sur l'écran d'accueil » ; Android : menu → « Installer l'application »).
+   Chaque push sur `main` republie ; le workflow tourne aussi chaque matin (06:20 UTC) pour
+   rafraîchir les vidéos — il committe `data/videos.json` : faire `git pull --rebase` avant
+   de pousser.
 2. **Installer sur un téléphone** et écouter : direct FR, direct EN, un épisode, écran
    verrouillé (Media Session), reprise d'un épisode. C'est la seule vérification qui compte
    et elle n'a pas été faite — le Mac n'a pas de téléphone.

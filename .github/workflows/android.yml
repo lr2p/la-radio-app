@@ -22,7 +22,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      - uses: android-actions/setup-android@v3
+      # Le SDK Android est préinstallé sur ubuntu-latest (ANDROID_HOME) : rien à installer.
       - run: npm ci
       # Dans l'app native, le web est servi à la racine (https://localhost/), pas sous /la-radio-app/.
       - run: VITE_BASE=/ npm run build

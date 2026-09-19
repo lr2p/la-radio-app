@@ -1,0 +1,35 @@
+# Fabrique l'APK Android (debug, non signé pour le store) dans le nuage : le Mac n'a ni
+# Xcode ni Android Studio. Lancement à la main (Actions → android → Run workflow) ou sur un
+# tag `android-*`. L'APK est déposé en artefact du run ; il s'installe sur n'importe quel
+# téléphone Android (« sources inconnues »). La version Play Store exige une signature
+# (keystore en secret) et un compte développeur : voir HANDOFF.md.
+name: android
+on:
+  workflow_dispatch:
+  push:
+    tags: ['android-*']
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      # Dans l'app native, le web est servi à la racine (https://localhost/), pas sous /la-radio-app/.
+      - run: VITE_BASE=/ npm run build
+      - run: npx cap sync android
+      - run: chmod +x android/gradlew && cd android && ./gradlew assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: la-radio-ai-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

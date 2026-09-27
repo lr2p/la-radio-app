@@ -1,13 +1,15 @@
 # Construit l'app et la publie sur GitHub Pages.
-# Déclenché à chaque push sur main, et chaque jour à 06:20 UTC pour rafraîchir la
+# Déclenché à chaque push sur main, et toutes les deux heures pour rafraîchir la
 # liste des vidéos YouTube (scripts/videos.mjs) — la mémoire data/videos.json est
-# recommitée quand elle change.
+# recommitée quand elle change. Une vidéo publiée sur la chaîne est donc dans l'app
+# au plus tard deux heures après (le planificateur de GitHub prend son temps : une
+# minute impaire et peu courue lui évite les heures de pointe).
 name: deploy
 on:
   push:
     branches: [main]
   schedule:
-    - cron: '20 6 * * *'
+    - cron: '17 */2 * * *'
   workflow_dispatch:
 
 permissions:

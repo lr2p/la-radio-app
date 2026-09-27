@@ -4,20 +4,24 @@
 // Sources, toutes publiques et sans clé :
 //   * le flux RSS de la chaîne (les 15 dernières vidéos, titre + date) ;
 //   * la « redirection des Shorts » : /shorts/<id> répond 200 pour un Short et 303
-//     vers /watch pour une vraie vidéo — c'est ainsi qu'on sépare les films des shorts.
+//     vers /watch pour une vraie vidéo — c'est ainsi qu'on sépare le format 9:16 du 16:9 ;
+//   * la durée, lue dans la page /watch (« lengthSeconds »).
 // Ce que YouTube ne redonne plus (au-delà des 15 dernières) est conservé dans
 // data/videos.json, la mémoire du recensement, commitée par le workflow.
 //
-// Règle d'affichage (décision Leeroy, 19/09/2026) : les films de Marvin — dont les
-// cinq premiers, publiés en 9:16 et classés Shorts par YouTube, listés dans
-// data/marvin-shorts.json — et TOUTES les vidéos longues publiées depuis le 1er septembre
-// 2026. Les trois vidéos longues de 2025 (avant Marvin) restent hors de l'app.
+// Règle d'affichage : les films de Marvin, et rien d'autre. Ce qui les distingue
+// n'est pas leur format — beaucoup sont publiés en 9:16 et YouTube les classe donc
+// en Shorts — mais leur durée : un film de Marvin dure deux à trois minutes, les
+// shorts de promotion de Richard moins d'une minute. Donc : tout ce qui est publié
+// depuis le 1er septembre 2026 et dure au moins 90 secondes. Les trois vidéos longues
+// de 2025 (avant Marvin) restent hors de l'app.
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = path.resolve(new URL('..', import.meta.url).pathname);
 const CHANNEL_ID = 'UCixrn6xPgobbRB_ECoFR6tQ';
 const SINCE = '2026-09-01';
+const MIN_SECONDS = 90;
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36';
 const COOKIE = 'CONSENT=YES+cb.20240101-01-p0.en+FX+000; SOCS=CAI';
 
@@ -63,10 +67,21 @@ async function isShort(id) {
   return null;
 }
 
+// Durée en secondes, ou null si la page ne la donne pas (on réessaiera au prochain passage).
+async function seconds(id) {
+  try {
+    const r = await fetch(`https://www.youtube.com/watch?v=${id}`, { headers: { 'user-agent': UA, cookie: COOKIE } });
+    if (!r.ok) return null;
+    const m = /"lengthSeconds":"(\d+)"/.exec(await r.text());
+    return m ? Number(m[1]) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const memoryPath = path.join(root, 'data', 'videos.json');
   const memory = await readJson(memoryPath, { videos: [] });
-  const marvinShorts = new Set(await readJson(path.join(root, 'data', 'marvin-shorts.json'), []));
   const byId = new Map(memory.videos.map((v) => [v.id, v]));
 
   let feed = [];
@@ -86,7 +101,10 @@ async function main() {
       }
       kind = s ? 'short' : 'film';
     }
-    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind });
+    // La durée ne sert qu'à trancher dans la fenêtre d'affichage : inutile de la
+    // chercher pour les vidéos d'avant Marvin, et on ne la cherche qu'une fois.
+    const dur = v.publishedAt >= SINCE ? prev.seconds ?? (await seconds(v.id)) : (prev.seconds ?? null);
+    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds: dur });
   }
 
   const all = [...byId.values()].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
@@ -96,7 +114,10 @@ async function main() {
     await writeFile(memoryPath, JSON.stringify({ updatedAt: new Date().toISOString(), videos: all }, null, 2) + '\n');
   }
 
-  const shown = all.filter((v) => marvinShorts.has(v.id) || (v.kind === 'film' && v.publishedAt >= SINCE));
+  // Durée inconnue (page illisible) : on retombe sur le format, un 16:9 étant toujours un film.
+  const shown = all
+    .filter((v) => v.publishedAt >= SINCE && (v.seconds == null ? v.kind === 'film' : v.seconds >= MIN_SECONDS))
+    .map(({ id, title, publishedAt, kind }) => ({ id, title, publishedAt, kind }));
   await mkdir(path.join(root, 'public'), { recursive: true });
   await writeFile(
     path.join(root, 'public', 'videos.json'),

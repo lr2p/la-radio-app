@@ -1,11 +1,18 @@
 // Recense les vidéos de la chaîne YouTube et écrit public/videos.json.
-//   node scripts/videos.mjs
+//   node scripts/videos.mjs                       le recensement complet (toutes les 2 h)
+//   node scripts/videos.mjs <url ou id YouTube>   + une vidéo nommée, sans attendre le flux RSS
+//
+// La deuxième forme est le chemin de la publication immédiate : le studio de Marvin
+// « sonne » ce dépôt quand Leeroy y colle le lien YouTube d'un film, et l'app est à jour
+// dans la minute. Le flux RSS peut mettre du temps à voir une vidéo fraîche ; une vidéo
+// nommée est donc lue directement sur sa page /watch. Une vidéo encore NON RÉPERTORIÉE
+// est laissée de côté : c'est le recensement des deux heures qui la prendra, publique.
 //
 // Sources, toutes publiques et sans clé :
 //   * le flux RSS de la chaîne (les 15 dernières vidéos, titre + date) ;
 //   * la « redirection des Shorts » : /shorts/<id> répond 200 pour un Short et 303
 //     vers /watch pour une vraie vidéo — c'est ainsi qu'on sépare le format 9:16 du 16:9 ;
-//   * la durée, lue dans la page /watch (« lengthSeconds »).
+//   * la page /watch : durée (« lengthSeconds »), titre, date et « non répertoriée ».
 // Ce que YouTube ne redonne plus (au-delà des 15 dernières) est conservé dans
 // data/videos.json, la mémoire du recensement, commitée par le workflow.
 //
@@ -67,16 +74,31 @@ async function isShort(id) {
   return null;
 }
 
-// Durée en secondes, ou null si la page ne la donne pas (on réessaiera au prochain passage).
-async function seconds(id) {
+// Ce que la page /watch dit d'une vidéo, ou null si elle est illisible (on réessaiera
+// au prochain passage). Un seul chargement sert à la durée ET, pour une vidéo nommée
+// que le flux RSS ne donne pas encore, à son titre, sa date et son statut.
+async function fiche(id) {
   try {
     const r = await fetch(`https://www.youtube.com/watch?v=${id}`, { headers: { 'user-agent': UA, cookie: COOKIE } });
     if (!r.ok) return null;
-    const m = /"lengthSeconds":"(\d+)"/.exec(await r.text());
-    return m ? Number(m[1]) : null;
+    const h = await r.text();
+    const sec = /"lengthSeconds":"(\d+)"/.exec(h);
+    if (!sec) return null;
+    return {
+      seconds: Number(sec[1]),
+      title: decode(/playerMicroformatRenderer":\{"thumbnail[\s\S]{0,400}?"title":\{"simpleText":"([^"]+)"/.exec(h)?.[1] ?? ''),
+      publishedAt: /"publishDate":\{?"?(?:simpleText":")?([0-9-]{10})/.exec(h)?.[1] ?? '',
+      cachee: /"isUnlisted":true/.test(h) || /"isPrivate":true/.test(h),
+    };
   } catch {
     return null;
   }
+}
+
+// `id` accepte une URL collée (watch, shorts, youtu.be) aussi bien qu'un identifiant nu.
+function idNomme(valeur) {
+  return /(?:youtu\.be\/|\/(?:watch\?v=|shorts\/|live\/|embed\/))([A-Za-z0-9_-]{11})/.exec(valeur)?.[1]
+    ?? (/^[A-Za-z0-9_-]{11}$/.test(valeur.trim()) ? valeur.trim() : null);
 }
 
 async function main() {
@@ -90,6 +112,28 @@ async function main() {
   } catch (e) {
     console.error('RSS indisponible, on garde la mémoire :', e.message);
   }
+
+  // Les vidéos nommées en argument que le flux ne donne pas (encore) : lues sur leur page.
+  const vues = new Set(feed.map((v) => v.id));
+  for (const arg of process.argv.slice(2)) {
+    const id = idNomme(arg);
+    if (!id) {
+      console.error('ni une URL YouTube ni un identifiant :', arg);
+      continue;
+    }
+    if (vues.has(id)) continue;
+    const f = await fiche(id);
+    if (!f || !f.publishedAt) {
+      console.error('page illisible, le recensement la trouvera :', id);
+      continue;
+    }
+    if (f.cachee) {
+      console.error('pas encore publique, on ne la montre pas :', id, f.title);
+      continue;
+    }
+    feed.push({ id, title: f.title, publishedAt: f.publishedAt, seconds: f.seconds });
+  }
+
   for (const v of feed) {
     const prev = byId.get(v.id) ?? {};
     let kind = prev.kind;
@@ -103,7 +147,8 @@ async function main() {
     }
     // La durée ne sert qu'à trancher dans la fenêtre d'affichage : inutile de la
     // chercher pour les vidéos d'avant Marvin, et on ne la cherche qu'une fois.
-    const dur = v.publishedAt >= SINCE ? prev.seconds ?? (await seconds(v.id)) : (prev.seconds ?? null);
+    const dur =
+      v.seconds ?? (v.publishedAt >= SINCE ? prev.seconds ?? (await fiche(v.id))?.seconds ?? null : prev.seconds ?? null);
     byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds: dur });
   }
 

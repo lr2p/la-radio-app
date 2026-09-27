@@ -16,7 +16,7 @@ et se met à jour toute seule.
 | Le direct | AzuraCast, flux publics `stream.la-radio.ai` (FR) et `:8010` / `/listen/airia/` (EN) |
 | Les podcasts | AzuraCast, station 1, API publique `/api/station/1/public/podcasts` + flux RSS |
 | Leur alimentation | `la-radio-magazine/scripts/vps/podcasts-sync.py`, cron VPS toutes les 15 min |
-| Les vidéos | `public/videos.json`, régénéré toutes les 2 h par le workflow (`scripts/videos.mjs`) |
+| Les vidéos | `public/videos.json`, régénéré toutes les 2 h par le workflow (`scripts/videos.mjs`), et dans la minute quand le studio de Marvin sonne le dépôt |
 
 L'app ne possède **aucun secret** et ne parle qu'à des points d'entrée publics : c'est ce
 qui permet de la servir en statique et de l'installer chez n'importe qui.
@@ -49,7 +49,14 @@ qui permet de la servir en statique et de l'installer chez n'importe qui.
   films de Marvin, reconnus à leur **durée** (≥ 90 s) et publiés depuis le 01/09/2026 —
   beaucoup sortent en 9:16 et YouTube les classe en Shorts, alors que les shorts de
   promotion de Richard durent moins d'une minute. Rien à tenir à jour à la main : une
-  nouvelle vidéo entre dans l'app toute seule, au prochain passage du workflow.
+  nouvelle vidéo entre dans l'app toute seule.
+* **La publication immédiate** : quand Leeroy colle le lien YouTube d'un film dans le
+  panneau Publication du studio de Marvin, le studio sonne ce dépôt
+  (`repository_dispatch` de type `video`, `marvin-video/publication.py`) et l'app est à
+  jour dans la minute. La vidéo nommée est lue sur sa page `/watch`, sans attendre que le
+  flux RSS la voie ; si elle est encore **non répertoriée**, elle n'est pas montrée — c'est
+  le passage des deux heures qui la prendra, publique. Les deux heures restent donc le
+  filet : la sonnerie n'est jamais indispensable.
 
 ## Développer
 

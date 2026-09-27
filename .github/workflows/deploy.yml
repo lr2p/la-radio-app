@@ -4,13 +4,22 @@
 # recommitée quand elle change. Une vidéo publiée sur la chaîne est donc dans l'app
 # au plus tard deux heures après (le planificateur de GitHub prend son temps : une
 # minute impaire et peu courue lui évite les heures de pointe).
+# Le studio de Marvin sonne aussi ce dépôt (`repository_dispatch` de type `video`, avec
+# l'id de la vidéo) au moment où Leeroy y colle le lien YouTube d'un film : l'app est alors
+# à jour dans la minute, sans attendre le prochain passage.
 name: deploy
 on:
   push:
     branches: [main]
   schedule:
     - cron: '17 */2 * * *'
+  repository_dispatch:
+    types: [video]
   workflow_dispatch:
+    inputs:
+      video:
+        description: 'URL ou id YouTube à recenser sans attendre le flux RSS (facultatif)'
+        required: false
 
 permissions:
   contents: write
@@ -32,7 +41,13 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Recenser les vidéos YouTube
-        run: node scripts/videos.mjs
+        # La vidéo nommée (sonnerie du studio ou lancement à la main) est lue directement
+        # sur sa page : le flux RSS met parfois du temps à voir une publication fraîche.
+        # Passée par l'environnement, jamais interpolée dans la commande : ce qui arrive
+        # par la sonnerie est une donnée, pas du shell.
+        env:
+          VIDEO: ${{ github.event.client_payload.video || inputs.video }}
+        run: node scripts/videos.mjs $VIDEO
       - name: Mémoriser le recensement
         run: |
           if ! git diff --quiet -- data/videos.json; then

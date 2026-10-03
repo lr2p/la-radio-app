@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-09-27T21:37:13.426Z",
+  "updatedAt": "2026-10-03T16:20:38.299Z",
   "videos": [
+    {
+      "id": "3_KsqgLM6LM",
+      "title": "Le « sauvage » de Coltrane jouait des berceuses",
+      "publishedAt": "2026-10-03",
+      "kind": "short",
+      "seconds": null
+    },
     {
       "id": "6jzTInaDrrc",
       "title": "Arrêtée dans son lit d'hôpital, Kanye West dénature sa chanson",

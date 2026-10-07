@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-10-03T16:20:38.299Z",
+  "updatedAt": "2026-10-07T17:26:46.611Z",
   "videos": [
+    {
+      "id": "drYFTTCZN08",
+      "title": "Sans ce sous sol, pas de Brown Sugar de D'Angelo",
+      "publishedAt": "2026-10-07",
+      "kind": "short",
+      "seconds": null
+    },
     {
       "id": "3_KsqgLM6LM",
       "title": "Le « sauvage » de Coltrane jouait des berceuses",

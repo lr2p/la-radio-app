@@ -1,20 +1,12 @@
 {
-  "updatedAt": "2026-10-09T22:12:36.647Z",
+  "updatedAt": "2026-10-09T22:41:38.092Z",
   "videos": [
     {
-      "id": "3HIeJGHhNZM",
-      "title": "Le Débrief du 9 octobre 2026 : Floride chaleureuse, Ukraine dans le noir",
+      "id": "9JIh8mNkH_0",
+      "title": "Analyse du 9/10 : Mobilisation lycéenne, Ukraine, Open AI",
       "publishedAt": "2026-10-09",
       "kind": "film",
-      "seconds": 861,
-      "series": "debrief"
-    },
-    {
-      "id": "DpObhHHENtU",
-      "title": "Kiev dans le noir, comment la pression physique devient-elle un levier diplomatique.",
-      "publishedAt": "2026-10-09",
-      "kind": "film",
-      "seconds": 328,
+      "seconds": 904,
       "series": "matinale"
     },
     {
@@ -26,12 +18,20 @@
       "series": "matinale"
     },
     {
-      "id": "9JIh8mNkH_0",
-      "title": "Analyse du 9/10 : Mobilisation lycéenne, Ukraine, Open AI",
+      "id": "DpObhHHENtU",
+      "title": "Kiev dans le noir, comment la pression physique devient-elle un levier diplomatique.",
       "publishedAt": "2026-10-09",
       "kind": "film",
-      "seconds": 904,
+      "seconds": 328,
       "series": "matinale"
+    },
+    {
+      "id": "3HIeJGHhNZM",
+      "title": "Le Débrief du 9 octobre 2026 : Floride chaleureuse, Ukraine dans le noir",
+      "publishedAt": "2026-10-09",
+      "kind": "film",
+      "seconds": 861,
+      "series": "debrief"
     },
     {
       "id": "drYFTTCZN08",

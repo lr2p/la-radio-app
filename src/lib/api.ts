@@ -208,6 +208,8 @@ export interface Video {
   title: string;
   publishedAt: string;
   kind: 'film' | 'short';
+  /** marvin = les films de Marvin ; matinale / debrief = le Journal Vidéo. */
+  series?: 'marvin' | 'matinale' | 'debrief';
 }
 
 export async function fetchVideos(): Promise<Video[]> {

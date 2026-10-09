@@ -53,5 +53,7 @@ export const PODCASTS_API = `${AZ}/api/station/1/public`;
 
 export const YOUTUBE_CHANNEL_ID = 'UCixrn6xPgobbRB_ECoFR6tQ';
 export const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@lr2paris';
+// La chaîne du Journal Vidéo (La Matinale, Le Débrief).
+export const JOURNAL_CHANNEL_URL = 'https://www.youtube.com/channel/UCrPMGr91b5ZoxHIrNLWNWKQ';
 
 export const NOWPLAYING_INTERVAL_MS = 15_000;

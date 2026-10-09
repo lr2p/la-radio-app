@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
-import { YOUTUBE_CHANNEL_URL } from '../config';
+import { JOURNAL_CHANNEL_URL, YOUTUBE_CHANNEL_URL } from '../config';
 import { fetchVideos, type Video } from '../lib/api';
+
+type Series = NonNullable<Video['series']>;
+const SERIES: Series[] = ['marvin', 'matinale', 'debrief'];
 import { formatDate } from '../lib/format';
 import { useSettings } from '../lib/settings';
 import { usePlayer } from '../player/PlayerContext';
@@ -12,6 +15,8 @@ export default function Videos() {
   const [videos, setVideos] = useState<Video[] | null>(null);
   const [error, setError] = useState(false);
   const [open, setOpen] = useState<string | null>(null);
+  const [series, setSeries] = useState<Series | null>(null);
+  const shown = videos?.filter((v) => !series || (v.series ?? 'marvin') === series);
 
   useEffect(() => {
     fetchVideos()
@@ -37,10 +42,22 @@ export default function Videos() {
         </div>
       )}
       {error && <p className="center">{s.podcasts.error}</p>}
-      {videos && videos.length === 0 && <p className="center">{s.videos.empty}</p>}
+      {videos && videos.length > 0 && (
+        <div className="chips video-series" role="tablist">
+          <button className={`chip${series === null ? ' on' : ''}`} onClick={() => setSeries(null)}>
+            {s.videos.all}
+          </button>
+          {SERIES.filter((k) => videos.some((v) => (v.series ?? 'marvin') === k)).map((k) => (
+            <button key={k} className={`chip${series === k ? ' on' : ''}`} onClick={() => setSeries(k)}>
+              {s.videos.series[k]}
+            </button>
+          ))}
+        </div>
+      )}
+      {shown && shown.length === 0 && <p className="center">{s.videos.empty}</p>}
 
       <div className="videos">
-        {videos?.map((v) => (
+        {shown?.map((v) => (
           <article key={v.id} className={`video${v.kind === 'short' ? ' short' : ''}`}>
             {open === v.id ? (
               <div className="video-frame">
@@ -62,7 +79,8 @@ export default function Videos() {
             <div className="video-text">
               <div className="video-title">{v.title}</div>
               <div className="video-meta">
-                {formatDate(v.publishedAt, lang)} · {v.kind === 'short' ? s.videos.short : s.videos.film}
+                {formatDate(v.publishedAt, lang)} ·{' '}
+                {v.series && v.series !== 'marvin' ? s.videos.series[v.series] : v.kind === 'short' ? s.videos.short : s.videos.film}
               </div>
             </div>
           </article>
@@ -70,7 +88,7 @@ export default function Videos() {
       </div>
 
       <div className="center">
-        <a className="btn ghost" href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noreferrer">
+        <a className="btn ghost" href={series === 'matinale' || series === 'debrief' ? JOURNAL_CHANNEL_URL : YOUTUBE_CHANNEL_URL} target="_blank" rel="noreferrer">
           <External size={16} /> {s.videos.channel}
         </a>
       </div>

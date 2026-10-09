@@ -22,11 +22,18 @@
 // shorts de promotion de Richard moins d'une minute. Donc : tout ce qui est publié
 // depuis le 1er septembre 2026 et dure au moins 90 secondes. Les trois vidéos longues
 // de 2025 (avant Marvin) restent hors de l'app.
+//
+// Deuxième chaîne, Live.LaRadioAI : le Journal Vidéo y publie La Matinale et Le Débrief
+// en films (Justine & Jérémy). Chaque vidéo y est rangée par sa série, lue dans son titre
+// et sa description (« La Matinale de La Radio AI — … ») ; ce qui n'est ni l'un ni l'autre
+// (le direct 24/7, par exemple) reste dehors. Le champ `series` de videos.json dit
+// d'où vient chaque vidéo : marvin, matinale ou debrief.
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = path.resolve(new URL('..', import.meta.url).pathname);
 const CHANNEL_ID = 'UCixrn6xPgobbRB_ECoFR6tQ';
+const JOURNAL_CHANNEL_ID = 'UCrPMGr91b5ZoxHIrNLWNWKQ';
 const SINCE = '2026-09-01';
 const MIN_SECONDS = 90;
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36';
@@ -40,8 +47,8 @@ async function readJson(p, fallback) {
   }
 }
 
-async function rss() {
-  const r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`, { headers: { 'user-agent': UA } });
+async function rss(channel = CHANNEL_ID) {
+  const r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`, { headers: { 'user-agent': UA } });
   if (!r.ok) throw new Error(`RSS ${r.status}`);
   const xml = await r.text();
   const out = [];
@@ -89,10 +96,22 @@ async function fiche(id) {
       title: decode(/playerMicroformatRenderer":\{"thumbnail[\s\S]{0,400}?"title":\{"simpleText":"([^"]+)"/.exec(h)?.[1] ?? ''),
       publishedAt: /"publishDate":\{?"?(?:simpleText":")?([0-9-]{10})/.exec(h)?.[1] ?? '',
       cachee: /"isUnlisted":true/.test(h) || /"isPrivate":true/.test(h),
+      direct: /"isLiveContent":true/.test(h),
+      description: JSON.parse(`"${/"shortDescription":"((?:[^"\\]|\\.)*)"/.exec(h)?.[1] ?? ''}"`),
     };
   } catch {
     return null;
   }
+}
+
+// La série d'une vidéo du Journal : celle des deux émissions nommée en premier.
+function serieJournal(texte) {
+  const m = texte.search(/matinale/i);
+  const d = texte.search(/d[ée]brief/i);
+  if (m < 0 && d < 0) return null;
+  if (d < 0) return 'matinale';
+  if (m < 0) return 'debrief';
+  return m < d ? 'matinale' : 'debrief';
 }
 
 // `id` accepte une URL collée (watch, shorts, youtu.be) aussi bien qu'un identifiant nu.
@@ -152,6 +171,26 @@ async function main() {
     byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds: dur });
   }
 
+  // Le Journal Vidéo : sa série se lit une fois sur la page, puis vit dans la mémoire.
+  let journal = [];
+  try {
+    journal = await rss(JOURNAL_CHANNEL_ID);
+  } catch (e) {
+    console.error('RSS du Journal indisponible, on garde la mémoire :', e.message);
+  }
+  for (const v of journal) {
+    if (byId.has(v.id)) continue;
+    const f = await fiche(v.id);
+    if (!f) {
+      console.error('page du Journal illisible, on réessaiera :', v.id, v.title);
+      continue;
+    }
+    if (f.cachee || f.direct || !f.seconds) continue;
+    const series = serieJournal(`${v.title}\n${f.description}`);
+    if (!series) continue;
+    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind: 'film', seconds: f.seconds, series });
+  }
+
   const all = [...byId.values()].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
   await mkdir(path.dirname(memoryPath), { recursive: true });
   // La mémoire n'est réécrite que si la liste change : sinon le workflow committerait chaque jour.
@@ -161,12 +200,12 @@ async function main() {
 
   // Durée inconnue (page illisible) : on retombe sur le format, un 16:9 étant toujours un film.
   const shown = all
-    .filter((v) => v.publishedAt >= SINCE && (v.seconds == null ? v.kind === 'film' : v.seconds >= MIN_SECONDS))
-    .map(({ id, title, publishedAt, kind }) => ({ id, title, publishedAt, kind }));
+    .filter((v) => v.series || (v.publishedAt >= SINCE && (v.seconds == null ? v.kind === 'film' : v.seconds >= MIN_SECONDS)))
+    .map(({ id, title, publishedAt, kind, series }) => ({ id, title, publishedAt, kind, series: series ?? 'marvin' }));
   await mkdir(path.join(root, 'public'), { recursive: true });
   await writeFile(
     path.join(root, 'public', 'videos.json'),
-    JSON.stringify({ updatedAt: new Date().toISOString(), channel: CHANNEL_ID, videos: shown }, null, 2) + '\n',
+    JSON.stringify({ updatedAt: new Date().toISOString(), channel: CHANNEL_ID, journalChannel: JOURNAL_CHANNEL_ID, videos: shown }, null, 2) + '\n',
   );
   console.log(`${all.length} vidéos connues, ${shown.length} affichées`);
 }

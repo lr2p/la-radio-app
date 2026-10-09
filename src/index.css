@@ -477,6 +477,9 @@ p {
 }
 
 /* ---------- vidéos ---------- */
+.video-series {
+  margin: 0 0 16px;
+}
 .videos {
   display: grid;
   gap: 18px;

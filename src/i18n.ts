@@ -42,7 +42,9 @@ const STRINGS = {
     },
     videos: {
       title: 'Vidéos',
-      subtitle: 'Les films de Marvin : un disque, une histoire.',
+      subtitle: 'Les films de Marvin, La Matinale et Le Débrief en vidéo.',
+      all: 'Tout',
+      series: { marvin: 'Marvin', matinale: 'La Matinale', debrief: 'Le Débrief' },
       channel: 'Voir la chaîne YouTube',
       empty: 'Aucune vidéo pour le moment.',
       short: 'Short',
@@ -111,7 +113,9 @@ const STRINGS = {
     },
     videos: {
       title: 'Videos',
-      subtitle: 'Marvin’s films: one record, one story.',
+      subtitle: 'Marvin’s films, plus La Matinale and Le Débrief on video.',
+      all: 'All',
+      series: { marvin: 'Marvin', matinale: 'La Matinale', debrief: 'Le Débrief' },
       channel: 'Open the YouTube channel',
       empty: 'No video yet.',
       short: 'Short',

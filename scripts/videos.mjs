@@ -57,7 +57,8 @@ async function rss(channel = CHANNEL_ID) {
     const id = /<yt:videoId>([^<]+)/.exec(e)?.[1];
     const title = /<title>([^<]*)/.exec(e)?.[1] ?? '';
     const published = /<published>([^<]+)/.exec(e)?.[1] ?? '';
-    if (id) out.push({ id, title: decode(title), publishedAt: published.slice(0, 10) });
+    const description = /<media:description>([^<]*)/.exec(e)?.[1] ?? '';
+    if (id) out.push({ id, title: decode(title), publishedAt: published.slice(0, 10), description: decode(description) });
   }
   return out;
 }
@@ -178,29 +179,50 @@ async function main() {
   } catch (e) {
     console.error('RSS du Journal indisponible, on garde la mémoire :', e.message);
   }
+  //
+  // Depuis le 10/10/2026, le runner GitHub reçoit une page /watch sans les données de la
+  // vidéo (IP de datacenter) : plus aucune vidéo du Journal n'entrait. Quand la page est
+  // illisible, on se contente du flux RSS, qui donne titre et description — de quoi lire la
+  // série — et de la redirection des Shorts, qui passe toujours depuis le runner. Le flux
+  // ne liste que des vidéos publiques ; seul le direct 24/7 est à écarter, par son titre.
+  // Les Shorts du Journal (#Shorts, extraits de La Matinale) sont retenus en mémoire pour
+  // ne pas être retestés, mais restent hors de l'app : on n'y montre que ses films.
   for (const v of journal) {
     if (byId.has(v.id)) continue;
     const f = await fiche(v.id);
-    if (!f) {
-      console.error('page du Journal illisible, on réessaiera :', v.id, v.title);
+    if (f ? f.cachee || f.direct || !f.seconds : /\b(direct|live)\b|24\s*\/\s*7/i.test(v.title)) continue;
+    const s = await isShort(v.id);
+    if (s === null) {
+      console.error('Journal : format indécis, on réessaiera :', v.id, v.title);
       continue;
     }
-    if (f.cachee || f.direct || !f.seconds) continue;
-    const series = serieJournal(`${v.title}\n${f.description}`);
+    const kind = s ? 'short' : 'film';
+    const seconds = f?.seconds ?? null;
+    const series = serieJournal(`${v.title}\n${f?.description ?? v.description}`);
     if (!series) continue;
-    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind: 'film', seconds: f.seconds, series });
+    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds, series });
   }
 
-  const all = [...byId.values()].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+  // Le même jour, l'ordre est fixé par l'identifiant : sans ce départage, deux vidéos du
+  // même jour s'échangeaient d'un passage à l'autre et le workflow committait pour rien.
+  const all = [...byId.values()].sort((a, b) =>
+    a.publishedAt !== b.publishedAt ? (a.publishedAt < b.publishedAt ? 1 : -1) : a.id < b.id ? -1 : a.id > b.id ? 1 : 0,
+  );
   await mkdir(path.dirname(memoryPath), { recursive: true });
   // La mémoire n'est réécrite que si la liste change : sinon le workflow committerait chaque jour.
   if (JSON.stringify(memory.videos ?? []) !== JSON.stringify(all)) {
     await writeFile(memoryPath, JSON.stringify({ updatedAt: new Date().toISOString(), videos: all }, null, 2) + '\n');
   }
 
-  // Durée inconnue (page illisible) : on retombe sur le format, un 16:9 étant toujours un film.
+  // Durée inconnue (page /watch illisible) : la vidéo est montrée. Depuis le 10/10/2026 le
+  // runner GitHub ne lit plus aucune durée ; retomber sur le format, comme avant, écartait
+  // tous les nouveaux films de Marvin, publiés en 9:16. Depuis le 1er septembre la chaîne
+  // ne publie que ses films — si des shorts de promotion y reviennent, c'est ici qu'on
+  // les verra passer.
   const shown = all
-    .filter((v) => v.series || (v.publishedAt >= SINCE && (v.seconds == null ? v.kind === 'film' : v.seconds >= MIN_SECONDS)))
+    .filter((v) =>
+      v.series ? v.kind === 'film' : v.publishedAt >= SINCE && (v.seconds == null || v.seconds >= MIN_SECONDS),
+    )
     .map(({ id, title, publishedAt, kind, series }) => ({ id, title, publishedAt, kind, series: series ?? 'marvin' }));
   await mkdir(path.join(root, 'public'), { recursive: true });
   await writeFile(

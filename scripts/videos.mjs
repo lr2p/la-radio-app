@@ -185,8 +185,8 @@ async function main() {
   // illisible, on se contente du flux RSS, qui donne titre et description — de quoi lire la
   // série — et de la redirection des Shorts, qui passe toujours depuis le runner. Le flux
   // ne liste que des vidéos publiques ; seul le direct 24/7 est à écarter, par son titre.
-  // Les Shorts du Journal (#Shorts, extraits de La Matinale) sont retenus en mémoire pour
-  // ne pas être retestés, mais restent hors de l'app : on n'y montre que ses films.
+  // Les Shorts du Journal (#Shorts, extraits de La Matinale) entrent dans l'app avec leur
+  // série, rangés comme un 9:16 (kind 'short') — demande de Leeroy du 15/10/2026.
   for (const v of journal) {
     if (byId.has(v.id)) continue;
     const f = await fiche(v.id);
@@ -221,7 +221,7 @@ async function main() {
   // les verra passer.
   const shown = all
     .filter((v) =>
-      v.series ? v.kind === 'film' : v.publishedAt >= SINCE && (v.seconds == null || v.seconds >= MIN_SECONDS),
+      v.series ? true : v.publishedAt >= SINCE && (v.seconds == null || v.seconds >= MIN_SECONDS),
     )
     .map(({ id, title, publishedAt, kind, series }) => ({ id, title, publishedAt, kind, series: series ?? 'marvin' }));
   await mkdir(path.join(root, 'public'), { recursive: true });

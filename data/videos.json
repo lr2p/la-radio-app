@@ -1,12 +1,132 @@
 {
-  "updatedAt": "2026-10-15T17:05:27.166Z",
+  "updatedAt": "2026-10-15T18:57:09.977Z",
   "videos": [
+    {
+      "id": "0OU6wWAOz_Y",
+      "title": "La Matinale du 15 octobre 2026 : Mouvement lycéen : 8000 gardes à vue",
+      "publishedAt": "2026-10-15",
+      "kind": "film",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "8IxSQYvjV2I",
+      "title": "Budget 2027 : l'Assemblée valide la contribution française de 30,9 milliards à l'Europe #Shorts",
+      "publishedAt": "2026-10-15",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "uhH3L7X7qtY",
+      "title": "Mouvement lycéen : près de 8 000 gardes à vue, la tension monte entre police et élèves #Shorts",
+      "publishedAt": "2026-10-15",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "wCMLQmpFkxw",
+      "title": "Ukraine : les drones privés de Starlink, coup dur attribué à Washington #Shorts",
+      "publishedAt": "2026-10-15",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "DWZCKEWme0M",
+      "title": "IA : Nvidia entre au capital de Doctolib, Microsoft appelle à des normes de sécurité #Shorts",
+      "publishedAt": "2026-10-14",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "KqQGdt3TI28",
+      "title": "Budget 2027 : l'Assemblée examine le projet de loi de finances, le RN sauve le… #Shorts",
+      "publishedAt": "2026-10-14",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "M25y7pD315Y",
       "title": "Coltrane a tout appris chez ce pianiste interdit",
       "publishedAt": "2026-10-14",
       "kind": "short",
       "seconds": null
+    },
+    {
+      "id": "UAeafC7cKS0",
+      "title": "La Matinale du 14 octobre 2026 : Le budget 2027 et le tour de force parlementaire",
+      "publishedAt": "2026-10-14",
+      "kind": "film",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "hmun1BmPfTM",
+      "title": "Mobilisation lycéenne : acte V dans la rue et débat sur le maintien de l'ordre #Shorts",
+      "publishedAt": "2026-10-14",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "18xUnz9VCu8",
+      "title": "Économie française : le FMI table sur une croissance atone de 0,4 % en 2026 #Shorts",
+      "publishedAt": "2026-10-13",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "fjGEfUT3XiQ",
+      "title": "La Matinale du 13 octobre 2026 : Quand un virus transforme le froid en arme",
+      "publishedAt": "2026-10-13",
+      "kind": "film",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "jQOP_icH3gA",
+      "title": "Mobilisation lycéenne : nouvelle journée d'action et réception au ministère #Shorts",
+      "publishedAt": "2026-10-13",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "tDyxKskmvjA",
+      "title": "Cyberattaque massive : des centaines de supermarchés français privés de froid #Shorts",
+      "publishedAt": "2026-10-13",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "8wZ9BpzVGAs",
+      "title": "Mondial de l'auto à Paris : Citroën ressuscite la 2CV en version électrique #Shorts",
+      "publishedAt": "2026-10-12",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "toA55qdEsfU",
+      "title": "La Matinale du 11 octobre 2026 : Trump, Poutine et l'accord diesel surprise",
+      "publishedAt": "2026-10-12",
+      "kind": "film",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "zyddRzOZbuI",
+      "title": "Le Débrief du 12 octobre 2026 : Un sanctuaire brisé par l'intérieur",
+      "publishedAt": "2026-10-12",
+      "kind": "film",
+      "seconds": null,
+      "series": "debrief"
     },
     {
       "id": "qY43yGeOVWU",
@@ -16,19 +136,19 @@
       "seconds": null
     },
     {
+      "id": "3HIeJGHhNZM",
+      "title": "Le Débrief du 9 octobre 2026 : Floride chaleureuse, Ukraine dans le noir",
+      "publishedAt": "2026-10-09",
+      "kind": "film",
+      "seconds": 861,
+      "series": "debrief"
+    },
+    {
       "id": "9JIh8mNkH_0",
       "title": "Analyse du 9/10 : Mobilisation lycéenne, Ukraine, Open AI",
       "publishedAt": "2026-10-09",
       "kind": "film",
       "seconds": 904,
-      "series": "matinale"
-    },
-    {
-      "id": "OZt7Jf2hSiw",
-      "title": "Mobilisation lycéenne : moyens et contestation",
-      "publishedAt": "2026-10-09",
-      "kind": "film",
-      "seconds": 265,
       "series": "matinale"
     },
     {
@@ -40,12 +160,12 @@
       "series": "matinale"
     },
     {
-      "id": "3HIeJGHhNZM",
-      "title": "Le Débrief du 9 octobre 2026 : Floride chaleureuse, Ukraine dans le noir",
+      "id": "OZt7Jf2hSiw",
+      "title": "Mobilisation lycéenne : moyens et contestation",
       "publishedAt": "2026-10-09",
       "kind": "film",
-      "seconds": 861,
-      "series": "debrief"
+      "seconds": 265,
+      "series": "matinale"
     },
     {
       "id": "drYFTTCZN08",

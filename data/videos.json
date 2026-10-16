@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-10-15T18:57:09.977Z",
+  "updatedAt": "2026-10-16T07:14:30.523Z",
   "videos": [
+    {
+      "id": "EfK1Y3KLVB0",
+      "title": "La Matinale du 16 octobre 2026 : Mobilisation lycéenne : le dialogue brisé",
+      "publishedAt": "2026-10-16",
+      "kind": "film",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "dh4EEGHfIa8",
+      "title": "Sommet européen à Bruxelles : budget de l'UE et compromis franco-allemand sur l'automobile #Shorts",
+      "publishedAt": "2026-10-16",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "g2DG4N9yodg",
+      "title": "Mobilisation lycéenne et manifestation du 17 octobre : Paris encadre, le flou persiste #Shorts",
+      "publishedAt": "2026-10-16",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "0OU6wWAOz_Y",
       "title": "La Matinale du 15 octobre 2026 : Mouvement lycéen : 8000 gardes à vue",

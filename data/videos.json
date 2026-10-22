@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-21T07:42:54.485Z",
+  "updatedAt": "2026-10-22T11:58:31.768Z",
   "videos": [
+    {
+      "id": "LZxiRLjTEJE",
+      "title": "France : manifestations interdites et couvre-feux en réponse aux violences #Shorts",
+      "publishedAt": "2026-10-22",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "l1AJ9vbJNk4",
+      "title": "Cybersécurité : une faille mondiale paralyse sites gouvernementaux et entreprises #Shorts",
+      "publishedAt": "2026-10-22",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "Idv0xu1dvQg",
       "title": "GiFi va demander un redressement judiciaire : 6 000 salariés inquiets après le refus des… #Shorts",

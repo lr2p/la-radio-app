@@ -1,9 +1,17 @@
 {
-  "updatedAt": "2026-10-23T07:35:59.143Z",
+  "updatedAt": "2026-10-23T18:23:59.368Z",
   "videos": [
     {
       "id": "FCn38hsqYMQ",
       "title": "Wall Street plonge sous les doutes sur la bulle de l'intelligence artificielle #Shorts",
+      "publishedAt": "2026-10-23",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "T66neLI-_kk",
+      "title": "Ukraine : Poutine se dit prêt à négocier un accord final, mais refuse une simple trêve #Shorts",
       "publishedAt": "2026-10-23",
       "kind": "short",
       "seconds": null,

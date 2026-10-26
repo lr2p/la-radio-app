@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-23T18:23:59.368Z",
+  "updatedAt": "2026-10-26T07:50:58.059Z",
   "videos": [
+    {
+      "id": "9nssSPcoHR8",
+      "title": "Automne social : Lecornu reçoit les lycéens, la mobilisation continue #Shorts",
+      "publishedAt": "2026-10-26",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "ZspRJh6f55g",
+      "title": "Ukraine : Zelensky annonce des discussions trilatérales en novembre #Shorts",
+      "publishedAt": "2026-10-26",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "FCn38hsqYMQ",
       "title": "Wall Street plonge sous les doutes sur la bulle de l'intelligence artificielle #Shorts",

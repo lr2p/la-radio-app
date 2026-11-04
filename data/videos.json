@@ -1,6 +1,29 @@
 {
-  "updatedAt": "2026-11-03T16:18:18.331Z",
+  "updatedAt": "2026-11-04T16:21:55.089Z",
   "videos": [
+    {
+      "id": "9pw1fOWjdI4",
+      "title": "Crise du coût de la vie : les syndicats européens appellent à la mobilisation #Shorts",
+      "publishedAt": "2026-11-04",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "MrNc7ZKywdo",
+      "title": "Guerre en Ukraine : une attaque russe coûte des vies dans le centre de Zaporijia #Shorts",
+      "publishedAt": "2026-11-04",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "Z4b_fk2UTb0",
+      "title": "Le bebop, tu l'attribues à Charlie Parker",
+      "publishedAt": "2026-11-04",
+      "kind": "short",
+      "seconds": null
+    },
     {
       "id": "b0X337S2EXo",
       "title": "Midterms aux États-Unis : un vote-test pour Trump et pour le monde #Shorts",

@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-11-12T09:53:14.319Z",
+  "updatedAt": "2026-11-13T17:46:53.538Z",
   "videos": [
+    {
+      "id": "VLUDjwz6puo",
+      "title": "Lycées bloqués : enseignants accusés, élèves inquiets pour Parcoursup #Shorts",
+      "publishedAt": "2026-11-13",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "qFya1WpgSxw",
+      "title": "Panne mondiale d'Outlook : Microsoft perturbé, l'IA aussi touchée #Shorts",
+      "publishedAt": "2026-11-13",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "NGJo21J7NHo",
       "title": "Smic revalorisé : 164 branches professionnelles mises en « illégalité », alerte de la CGT #Shorts",

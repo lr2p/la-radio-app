@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-11-17T13:30:54.603Z",
+  "updatedAt": "2026-11-18T07:35:19.143Z",
   "videos": [
+    {
+      "id": "5FGV3FjJ1wA",
+      "title": "Mobilisation du 17 novembre : plus de 146 000 manifestants en France #Shorts",
+      "publishedAt": "2026-11-18",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "XY9i-1F4Ozc",
+      "title": "Ukraine : la Russie accuse la France d'implication directe dans le conflit #Shorts",
+      "publishedAt": "2026-11-18",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "PNXcStalX0Y",
       "title": "Mobilisation du 17 novembre : grève dans la fonction publique et transports perturbés #Shorts",

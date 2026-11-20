@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-11-19T10:25:08.278Z",
+  "updatedAt": "2026-11-20T12:58:34.086Z",
   "videos": [
+    {
+      "id": "5C6mK9XNPrc",
+      "title": "Génocide en Birmanie : la Cour internationale de justice condamne l'État #Shorts",
+      "publishedAt": "2026-11-20",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "jLGHVTsY1Qw",
+      "title": "Intelligence Artificielle : l'IPO historique d'Anthropic bouleverse le marché #Shorts",
+      "publishedAt": "2026-11-20",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
+    {
+      "id": "z8zDR-vlhvs",
+      "title": "Cyberattaques : le Premier ministre alerte sur une menace inédite et grave #Shorts",
+      "publishedAt": "2026-11-20",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale"
+    },
     {
       "id": "oeXWGpHJUC8",
       "title": "L'Assemblée examine la proposition de loi interdisant le commerce avec les colonies… #Shorts",

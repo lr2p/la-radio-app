@@ -16,6 +16,7 @@ const SHOWS = [
   ['debrief', 'Le Débrief', 'Charlotte', '#f97316', 'fr'],
   ['cejourla', 'Ce jour Là', 'Marvin', '#a855f7', 'fr'],
   ['cejourla-integrale', "Ce jour Là\nl'intégrale", 'Marvin', '#7c3aed', 'fr'],
+  ['table-decoute', "La Table\nd'écoute", 'Marvin', '#be185d', 'fr'],
   ['richard-fr', 'La Question\nde Richard', 'Richard', '#6366f1', 'fr'],
   ['simon', 'Les Good News\nde Simon', 'Simon', '#10b981', 'fr'],
   ['gueulante', 'La Gueulante', 'Hellno', '#ef4444', 'fr'],

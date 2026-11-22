@@ -82,6 +82,7 @@ export default function Videos() {
                 {formatDate(v.publishedAt, lang)} ·{' '}
                 {v.series && v.series !== 'marvin' ? s.videos.series[v.series] : v.kind === 'short' ? s.videos.short : s.videos.film}
               </div>
+              {v.description && <p className="video-desc">{v.description}</p>}
             </div>
           </article>
         ))}

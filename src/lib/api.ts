@@ -210,6 +210,8 @@ export interface Video {
   kind: 'film' | 'short';
   /** marvin = les films de Marvin ; matinale / debrief = le Journal Vidéo. */
   series?: 'marvin' | 'matinale' | 'debrief';
+  /** Le petit texte de présentation, tiré de la description YouTube (scripts/videos.mjs). */
+  description?: string;
 }
 
 export async function fetchVideos(): Promise<Video[]> {

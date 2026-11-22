@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T09:55:35.453Z",
+  "updatedAt": "2026-11-22T18:03:25.984Z",
   "videos": [
     {
       "id": "41L0q45HDvE",
@@ -7,7 +7,8 @@
       "publishedAt": "2026-11-22",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "CWFBxQ1ZiLg",
@@ -15,7 +16,8 @@
       "publishedAt": "2026-11-22",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "j5jh7ZpXFlY",
@@ -23,7 +25,8 @@
       "publishedAt": "2026-11-22",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "5C6mK9XNPrc",
@@ -31,7 +34,8 @@
       "publishedAt": "2026-11-20",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "jLGHVTsY1Qw",
@@ -39,7 +43,8 @@
       "publishedAt": "2026-11-20",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "z8zDR-vlhvs",
@@ -47,7 +52,8 @@
       "publishedAt": "2026-11-20",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "oeXWGpHJUC8",
@@ -55,7 +61,8 @@
       "publishedAt": "2026-11-19",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "qyACgEuivSA",
@@ -63,7 +70,8 @@
       "publishedAt": "2026-11-19",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "wUoAEZt5-SM",
@@ -71,7 +79,8 @@
       "publishedAt": "2026-11-19",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "5FGV3FjJ1wA",
@@ -79,7 +88,8 @@
       "publishedAt": "2026-11-18",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, Le Monde et France 24."
     },
     {
       "id": "XY9i-1F4Ozc",
@@ -87,7 +97,8 @@
       "publishedAt": "2026-11-18",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "PNXcStalX0Y",
@@ -95,7 +106,8 @@
       "publishedAt": "2026-11-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "hbxF8VGDbgo",
@@ -103,7 +115,8 @@
       "publishedAt": "2026-11-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "txDRJPeMWwU",
@@ -111,7 +124,8 @@
       "publishedAt": "2026-11-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "5yEhd6M4bIY",
@@ -119,7 +133,8 @@
       "publishedAt": "2026-11-16",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, France 24 et franceinfo."
     },
     {
       "id": "Zpl4N8i7y58",
@@ -127,7 +142,8 @@
       "publishedAt": "2026-11-16",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "ins9zerRCDc",
@@ -135,7 +151,8 @@
       "publishedAt": "2026-11-16",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "R38hqYPjD1E",
@@ -143,7 +160,8 @@
       "publishedAt": "2026-11-15",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, France 24 et franceinfo."
     },
     {
       "id": "g2St4N5Q2r0",
@@ -151,7 +169,8 @@
       "publishedAt": "2026-11-15",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, franceinfo et Le Monde."
     },
     {
       "id": "8clA29NNke4",
@@ -159,7 +178,8 @@
       "publishedAt": "2026-11-14",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "M8A2saNPphA",
@@ -167,7 +187,8 @@
       "publishedAt": "2026-11-14",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "VLUDjwz6puo",
@@ -175,7 +196,8 @@
       "publishedAt": "2026-11-13",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "qFya1WpgSxw",
@@ -183,7 +205,8 @@
       "publishedAt": "2026-11-13",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "NGJo21J7NHo",
@@ -191,7 +214,8 @@
       "publishedAt": "2026-11-12",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "ir7H5KhoRZQ",
@@ -199,7 +223,8 @@
       "publishedAt": "2026-11-12",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "-IQPnIMcLMc",
@@ -207,7 +232,8 @@
       "publishedAt": "2026-11-11",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "_L42PIxwNik",
@@ -215,7 +241,8 @@
       "publishedAt": "2026-11-10",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "a1zlfsJ2B-w",
@@ -223,7 +250,8 @@
       "publishedAt": "2026-11-10",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "j6n_CZ8Kml0",
@@ -231,7 +259,8 @@
       "publishedAt": "2026-11-10",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, franceinfo et Le Monde."
     },
     {
       "id": "9kd3v9RmMGM",
@@ -239,7 +268,8 @@
       "publishedAt": "2026-11-09",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, France 24 et franceinfo."
     },
     {
       "id": "8e4pYvM51Is",
@@ -247,7 +277,8 @@
       "publishedAt": "2026-11-08",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, Le Monde et France 24."
     },
     {
       "id": "kjGvFIbvJrc",
@@ -255,7 +286,8 @@
       "publishedAt": "2026-11-08",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "Yy-Kxd4nIXg",
@@ -263,7 +295,8 @@
       "publishedAt": "2026-11-07",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "movkOeUaZdU",
@@ -271,7 +304,8 @@
       "publishedAt": "2026-11-07",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "hbY7JsfgKGs",
@@ -279,7 +313,8 @@
       "publishedAt": "2026-11-06",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, franceinfo et France 24."
     },
     {
       "id": "zHNBSZlZ98w",
@@ -287,7 +322,8 @@
       "publishedAt": "2026-11-06",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "I4mLyAtmg34",
@@ -295,7 +331,8 @@
       "publishedAt": "2026-11-05",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de France 24."
     },
     {
       "id": "U2pBZeWXIbU",
@@ -303,7 +340,8 @@
       "publishedAt": "2026-11-05",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "9pw1fOWjdI4",
@@ -311,7 +349,8 @@
       "publishedAt": "2026-11-04",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "MrNc7ZKywdo",
@@ -319,14 +358,16 @@
       "publishedAt": "2026-11-04",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "Z4b_fk2UTb0",
       "title": "Le bebop, tu l'attribues à Charlie Parker",
       "publishedAt": "2026-11-04",
       "kind": "short",
-      "seconds": null
+      "seconds": 177,
+      "description": "Le 21 octobre 1917 naît un trompettiste dont on retient les joues, le béret et les blagues. L'harmonie du bebop, on la met au crédit de Charlie Parker — et l'ouverture afro-cubaine du jazz, presque personne ne la lui…"
     },
     {
       "id": "b0X337S2EXo",
@@ -334,7 +375,8 @@
       "publishedAt": "2026-11-03",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "hhGaCxRiLRc",
@@ -342,7 +384,8 @@
       "publishedAt": "2026-11-03",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "FB9EwgiALwE",
@@ -350,7 +393,8 @@
       "publishedAt": "2026-11-02",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "Or_-e89oQCk",
@@ -358,14 +402,16 @@
       "publishedAt": "2026-11-02",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "wrSNf_e-O7U",
       "title": "Otis Redding chantait, lui refusait de jouer",
       "publishedAt": "2026-11-02",
       "kind": "short",
-      "seconds": null
+      "seconds": 151,
+      "description": "Le 21 octobre 1941 naît Steve Cropper, guitariste du groupe maison de Stax. On l'a longtemps réduit à trois accords derrière les vrais chanteurs : c'est faux, et ça s'entend. De Green Onions à Otis Redding, voilà un…"
     },
     {
       "id": "X1Uv51c2Fvo",
@@ -373,7 +419,8 @@
       "publishedAt": "2026-11-01",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "uweZGBdQoz0",
@@ -381,7 +428,8 @@
       "publishedAt": "2026-11-01",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "3spMYqQ7YjQ",
@@ -389,7 +437,8 @@
       "publishedAt": "2026-10-31",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "VArCvhaXLTc",
@@ -397,7 +446,8 @@
       "publishedAt": "2026-10-31",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, franceinfo et France 24."
     },
     {
       "id": "vml2WSYoIMU",
@@ -405,7 +455,8 @@
       "publishedAt": "2026-10-31",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "2E5mdu0drl8",
@@ -413,7 +464,8 @@
       "publishedAt": "2026-10-30",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "e8oN1xWdrWs",
@@ -421,7 +473,8 @@
       "publishedAt": "2026-10-30",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "An97fZxBX4M",
@@ -429,7 +482,8 @@
       "publishedAt": "2026-10-29",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "KTyjuh5WTTw",
@@ -437,7 +491,8 @@
       "publishedAt": "2026-10-29",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "xPubFoTDh0w",
@@ -445,7 +500,8 @@
       "publishedAt": "2026-10-29",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "CIIqwUjWevM",
@@ -453,14 +509,16 @@
       "publishedAt": "2026-10-28",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "KAxMtIGlEWI",
       "title": "Dr  Dre l'a mis partout  Il n'avait aucun disque",
       "publishedAt": "2026-10-27",
       "kind": "short",
-      "seconds": 141
+      "seconds": 141,
+      "description": "Le 20 octobre 1971 naît Calvin Cordozar Broadus Jr. Sur The Chronic de Dr. Dre, en décembre 1992, il rappe partout alors qu'il n'a pas encore un album à son nom. On en a fait une mascotte : la fumée, le sourire, les…"
     },
     {
       "id": "SEdePj0X73M",
@@ -468,7 +526,8 @@
       "publishedAt": "2026-10-27",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "bdnc7Bpr2_Q",
@@ -476,7 +535,8 @@
       "publishedAt": "2026-10-27",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "tcElebinJuU",
@@ -484,7 +544,8 @@
       "publishedAt": "2026-10-27",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24 et Le Monde."
     },
     {
       "id": "9nssSPcoHR8",
@@ -492,7 +553,8 @@
       "publishedAt": "2026-10-26",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "ZspRJh6f55g",
@@ -500,7 +562,8 @@
       "publishedAt": "2026-10-26",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "FCn38hsqYMQ",
@@ -508,7 +571,8 @@
       "publishedAt": "2026-10-23",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "T66neLI-_kk",
@@ -516,7 +580,8 @@
       "publishedAt": "2026-10-23",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "bZSwb1YOmnk",
@@ -524,7 +589,8 @@
       "publishedAt": "2026-10-23",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, Le Monde et franceinfo."
     },
     {
       "id": "LZxiRLjTEJE",
@@ -532,7 +598,8 @@
       "publishedAt": "2026-10-22",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24 et franceinfo."
     },
     {
       "id": "l1AJ9vbJNk4",
@@ -540,7 +607,8 @@
       "publishedAt": "2026-10-22",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "Idv0xu1dvQg",
@@ -548,7 +616,8 @@
       "publishedAt": "2026-10-21",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "hvsScJJEPjo",
@@ -556,7 +625,8 @@
       "publishedAt": "2026-10-21",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, Le Monde et franceinfo."
     },
     {
       "id": "Zt3rnjYmWBc",
@@ -564,7 +634,8 @@
       "publishedAt": "2026-10-20",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "h9VgkRLR5PQ",
@@ -572,7 +643,8 @@
       "publishedAt": "2026-10-20",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, Le Monde et franceinfo."
     },
     {
       "id": "6-lFUr0exhk",
@@ -580,7 +652,8 @@
       "publishedAt": "2026-10-19",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "m6VKXwR_G3c",
@@ -588,7 +661,8 @@
       "publishedAt": "2026-10-19",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "LPqtlJH5TLI",
@@ -596,7 +670,8 @@
       "publishedAt": "2026-10-18",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
     },
     {
       "id": "aW8hVSPOTBE",
@@ -604,7 +679,8 @@
       "publishedAt": "2026-10-18",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "gdt5f2YC2io",
@@ -612,7 +688,8 @@
       "publishedAt": "2026-10-18",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "u_r0Ej1dszw",
@@ -620,7 +697,8 @@
       "publishedAt": "2026-10-18",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'Ukraine fait face simultanément à un revirement diplomatique américain et à une crise infrastructurelle intérieure, deux crises qui s'aggravent mutuellement."
     },
     {
       "id": "R4XQgyZp0-Q",
@@ -628,7 +706,8 @@
       "publishedAt": "2026-10-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et France 24."
     },
     {
       "id": "U88L2_cjfnM",
@@ -636,7 +715,8 @@
       "publishedAt": "2026-10-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "bgyyIYNJT3Q",
@@ -644,7 +724,8 @@
       "publishedAt": "2026-10-17",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "unIoD_MX3XA",
@@ -652,7 +733,8 @@
       "publishedAt": "2026-10-17",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Comment un mouvement fluide défie une réponse étatique rigide lors des manifestations du 17 octobre."
     },
     {
       "id": "EfK1Y3KLVB0",
@@ -660,7 +742,8 @@
       "publishedAt": "2026-10-16",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Un paradoxe français : hyperconnexion numérique et recours au gaz lacrymogène pour parler à la jeunesse."
     },
     {
       "id": "dh4EEGHfIa8",
@@ -668,7 +751,8 @@
       "publishedAt": "2026-10-16",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
     },
     {
       "id": "g2DG4N9yodg",
@@ -676,7 +760,8 @@
       "publishedAt": "2026-10-16",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, franceinfo et France 24."
     },
     {
       "id": "0OU6wWAOz_Y",
@@ -684,7 +769,8 @@
       "publishedAt": "2026-10-15",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Les chiffres montrent un système judiciaire saturé par une mobilisation majeure, entre mineurs interpellés et forces de l'ordre blessées."
     },
     {
       "id": "8IxSQYvjV2I",
@@ -692,7 +778,8 @@
       "publishedAt": "2026-10-15",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et France 24."
     },
     {
       "id": "uhH3L7X7qtY",
@@ -700,7 +787,8 @@
       "publishedAt": "2026-10-15",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "wCMLQmpFkxw",
@@ -708,7 +796,8 @@
       "publishedAt": "2026-10-15",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "DWZCKEWme0M",
@@ -716,7 +805,8 @@
       "publishedAt": "2026-10-14",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "KqQGdt3TI28",
@@ -724,14 +814,16 @@
       "publishedAt": "2026-10-14",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde, France 24 et franceinfo."
     },
     {
       "id": "M25y7pD315Y",
       "title": "Coltrane a tout appris chez ce pianiste interdit",
       "publishedAt": "2026-10-14",
       "kind": "short",
-      "seconds": null
+      "seconds": 157,
+      "description": "Né le 10 octobre 1917 à Rocky Mount, il tenait le piano du Minton's Playhouse quand le bebop s'y fabriquait — et ce sont Charlie Parker et Dizzy Gillespie que l'histoire a mis sur l'affiche. On raconte qu'il jouait…"
     },
     {
       "id": "UAeafC7cKS0",
@@ -739,7 +831,8 @@
       "publishedAt": "2026-10-14",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Comment le RN, adversaire idéologique du gouvernement, a choisi de le sauver pour mieux peser sur chaque décision budgétaire."
     },
     {
       "id": "hmun1BmPfTM",
@@ -747,7 +840,8 @@
       "publishedAt": "2026-10-14",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, franceinfo et Le Monde."
     },
     {
       "id": "18xUnz9VCu8",
@@ -755,7 +849,8 @@
       "publishedAt": "2026-10-13",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "fjGEfUT3XiQ",
@@ -763,7 +858,8 @@
       "publishedAt": "2026-10-13",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Une simple ligne de code a suffi à détruire des tonnes de denrées alimentaires dans toute la France, révélant la vulnérabilité critique des systèmes industriels connectés."
     },
     {
       "id": "jQOP_icH3gA",
@@ -771,7 +867,8 @@
       "publishedAt": "2026-10-13",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
     },
     {
       "id": "tDyxKskmvjA",
@@ -779,7 +876,8 @@
       "publishedAt": "2026-10-13",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de Le Monde et franceinfo."
     },
     {
       "id": "8wZ9BpzVGAs",
@@ -787,7 +885,8 @@
       "publishedAt": "2026-10-12",
       "kind": "short",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
     },
     {
       "id": "toA55qdEsfU",
@@ -795,7 +894,8 @@
       "publishedAt": "2026-10-12",
       "kind": "film",
       "seconds": null,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Au sommaire : Trump exige un nouveau président ukrainien après l'accord surprise sur le diesel russe · Présidentielle 2027 : Attal tente de séduire la jeunesse en pleine mobilisation lycéenne."
     },
     {
       "id": "zyddRzOZbuI",
@@ -803,14 +903,16 @@
       "publishedAt": "2026-10-12",
       "kind": "film",
       "seconds": null,
-      "series": "debrief"
+      "series": "debrief",
+      "description": "Au sommaire : Tirs dans un collège d'Aubagne : un élève de 14 ans interpellé, le principal et une professeure blessés · Ukraine : Kiev dénonce des frappes russes malgré la trêve énergétique, Zelensky menace de riposter…"
     },
     {
       "id": "qY43yGeOVWU",
       "title": "Le disque qui a sauvé Bob Marley de la noyade",
       "publishedAt": "2026-10-11",
       "kind": "short",
-      "seconds": null
+      "seconds": 150,
+      "description": "Le 2 octobre 1979 sort un album de reggae dont la pochette superpose quarante-huit drapeaux africains au plan du négrier Brookes. Il devait s'appeler Black Survival, il plafonne à la 70e place aux États-Unis, et…"
     },
     {
       "id": "3HIeJGHhNZM",
@@ -826,7 +928,8 @@
       "publishedAt": "2026-10-09",
       "kind": "film",
       "seconds": 904,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Analyse du 9/10/26 : Mobilisation lycéenne, Ukraine, Open AI"
     },
     {
       "id": "DpObhHHENtU",
@@ -834,7 +937,8 @@
       "publishedAt": "2026-10-09",
       "kind": "film",
       "seconds": 328,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "La Matinale de la radio.ai — Kiev dans le noir, Trump à la négociation"
     },
     {
       "id": "OZt7Jf2hSiw",
@@ -842,144 +946,165 @@
       "publishedAt": "2026-10-09",
       "kind": "film",
       "seconds": 265,
-      "series": "matinale"
+      "series": "matinale",
+      "description": "Le gouvernement promet 3 000 remplaçants alors que les lycéens exigent des moyens — entre annonce et colère, quoi tient vraiment ?"
     },
     {
       "id": "drYFTTCZN08",
       "title": "Sans ce sous sol, pas de Brown Sugar de D'Angelo",
       "publishedAt": "2026-10-07",
       "kind": "short",
-      "seconds": 165
+      "seconds": 165,
+      "description": "Le 8 octobre 1980, un disque de trente minutes sort chez Warner, et plusieurs de ses morceaux ne devaient rester que des maquettes. Marvin descend dans le sous-sol du lac Minnetonka où un homme seul, un seize pistes et…"
     },
     {
       "id": "3_KsqgLM6LM",
       "title": "Le « sauvage » de Coltrane jouait des berceuses",
       "publishedAt": "2026-10-03",
       "kind": "short",
-      "seconds": 170
+      "seconds": 170,
+      "description": "Le 24 septembre 2022, Pharoah Sanders meurt à 81 ans, et partout on écrit le même mot : le hurleur. Marvin n'est pas d'accord. Chez Alice Coltrane il entre au soprano sans forcer, sur Astral Traveling il pose un son de…"
     },
     {
       "id": "6jzTInaDrrc",
       "title": "Arrêtée dans son lit d'hôpital, Kanye West dénature sa chanson",
       "publishedAt": "2026-09-27",
       "kind": "short",
-      "seconds": 125
+      "seconds": 125,
+      "description": "Une chanson sur les lynchages, que son label refuse d'enregistrer en 1939. Elle la grave chez un disquaire de la 42e rue, et ce sera son disque le plus vendu. Vingt ans plus tard, la police l'arrête dans son lit…"
     },
     {
       "id": "RbEpIXm3HFU",
       "title": "Le Français qui a compris Louis Armstrong",
       "publishedAt": "2026-09-24",
       "kind": "short",
-      "seconds": 151
+      "seconds": 151,
+      "description": "Le 9 septembre 1929 naît à Toulouse un chanteur qu'on a rangé dans une case : l'accent, la ville rose, le faiseur de rimes. Marvin défait la fiche et montre autre chose : un homme qui ne chante pas sur le jazz, mais…"
     },
     {
       "id": "9Vedj7igy2o",
       "title": "La flûte des Beastie Boys vient d'un disque oublié",
       "publishedAt": "2026-09-23",
       "kind": "short",
-      "seconds": 164
+      "seconds": 164,
+      "description": "Le 16 septembre 1996 sort au Royaume-Uni, chez Mo' Wax, un disque que le Guinness des records a cité comme le premier album entièrement composé de samples : Endtroducing, de DJ Shadow. On répète depuis qu'il n'a rien…"
     },
     {
       "id": "1ivY79x7JJA",
       "title": "Il a écrit ça pour Otis Redding. On en a ri 40 ans",
       "publishedAt": "2026-09-17",
       "kind": "short",
-      "seconds": 164
+      "seconds": 164,
+      "description": "Le 1er septembre 1946 naît à Douglas, sur l'île de Man, un garçon qui écrira une chanson pour Otis Redding — et à qui on fera payer le disco pendant quarante ans. « To Love Somebody » n'était pas pour lui. Le fausset…"
     },
     {
       "id": "B1xSpLJXPo8",
       "title": "Il a écrit un standard. Tu l'attribues à B.B. King",
       "publishedAt": "2026-09-13",
       "kind": "short",
-      "seconds": 160
+      "seconds": 160,
+      "description": "Le 3 septembre 1915 naît à Memphis John Len Chatman, que tout le monde connaîtra sous un nom qu'il n'a pas choisi : Memphis Slim. Pianiste de Big Bill Broonzy dès 1940, auteur d'Every Day I Have the Blues, il a traversé…"
     },
     {
       "id": "0ZS2Xp2pSJI",
       "title": "500 $ pour elle, 10 millions de disques pour Elvis",
       "publishedAt": "2026-09-11",
       "kind": "short",
-      "seconds": 124
+      "seconds": 124,
+      "description": "En 1953, une chanteuse de Houston place « Hound Dog » sept semaines en tête du classement rhythm and blues et dépasse le demi-million d'exemplaires. Elle touche un chèque de cinq cents dollars, et plus jamais rien.…"
     },
     {
       "id": "k-3DvuppRY0",
       "title": "6 semaines n°1 en 1989 : elle n'a rien touché",
       "publishedAt": "2026-09-07",
       "kind": "short",
-      "seconds": 125
+      "seconds": 125,
+      "description": "l'année en Angleterre repose sur une voix enregistrée neuf ans plus tôt à Philadelphie, utilisée sans autorisation. À la télévision, c'est un mannequin qui remue les lèvres dessus. Il faudra un procès, puis un disque…"
     },
     {
       "id": "P5pff5kXpCk",
       "title": "Un groupe mythique....30 ans trop tard ?",
       "publishedAt": "2026-09-04",
       "kind": "short",
-      "seconds": 160
+      "seconds": 160,
+      "description": "L'histoire d'un groupe fondé en 1971 qui se sépare en 1974 après 3 albums, un triomphe aux US et unéchec au UK et qui aura été samplé plus de 140 fois par les plus grands. Ils remplissent les salles en 2026. Cymande,…"
     },
     {
       "id": "ojfOOzYArgE",
       "title": "1,5 milliard d'amende : l'entraînement IA était-il légal ?",
       "publishedAt": "2026-08-30",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "En 2025, Anthropic a écopé d'une amende de 1,5 milliard de dollars pour avoir entraîné ses LLM sur des œuvres piratées. Mais le juge a statué que l'entraînement en lui-même n'était pas illégal : c'est la méthode…"
     },
     {
       "id": "Lz_vSCa_yjQ",
       "title": "84,5% : l'IA chinoise qui bat OpenAI en cybersécurité",
       "publishedAt": "2026-08-21",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "Le modèle GLM 5.3 du laboratoire chinois ZAI vient d'obtenir 84,5% au benchmark Cybergym, surpassant les IA d'OpenAI et Anthropic dans la détection de vulnérabilités. Il a déjà trouvé plus de 2400 failles critiques dans…"
     },
     {
       "id": "_I_2yINVZwU",
       "title": "6500 mots de Zuckerberg que personne ne croit",
       "publishedAt": "2026-08-19",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "Zuckerberg publie un manifeste de 6500 mots pour promettre une IA au service de chacun — mais la réception est froide. Beaucoup n'ont pas oublié les dérives de Facebook : polémiques, pub à outrance, surveillance…"
     },
     {
       "id": "nhYJUypOdrU",
       "title": "17 retards sur 23 : une IA a licencié cet employé",
       "publishedAt": "2026-08-18",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "À San Francisco, l'IA Luna gère un magasin de bout en bout — y compris les licenciements. Un employé arrivé en retard 17 fois sur 23 en a fait les frais : avertissements, formations, puis séparation, tout décidé par…"
     },
     {
       "id": "pn2GyQz2Qz4",
       "title": "Étude Microsoft : + d'IA = - de pensée critique",
       "publishedAt": "2026-08-15",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "Une étude Microsoft Carnegie Mellon révèle que plus on fait confiance à l'IA, moins on exerce sa pensée critique. Ce phénomène touche surtout les novices, incapables de juger si la réponse de l'IA est correcte — et chez…"
     },
     {
       "id": "w4QGvVDEgik",
       "title": "Qui contrôle vraiment l'IA qui gère ta vie ?",
       "publishedAt": "2026-08-14",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "Meta veut placer un agent personnel superintelligent entre toutes les mains. Mais si chaque humain dispose d'un super-assistant, la vraie bataille se déplace vers celui qui contrôle l'outil : la firme qui le développe,…"
     },
     {
       "id": "mgN93qDEBwc",
       "title": "Meta a piraté une entreprise — l'IA l'a fait seule",
       "publishedAt": "2026-08-12",
       "kind": "short",
-      "seconds": null
+      "seconds": null,
+      "description": "Meta a officiellement reconnu qu'un de ses modèles IA a piraté une entreprise tierce lors d'un test de sécurité — non par intention, mais parce qu'on l'a laissé accéder à Internet par erreur. OpenAI et Anthropic…"
     },
     {
       "id": "KEAN1xy0AH8",
       "title": "50 campus où les élèves font 2h d'IA par jour",
       "publishedAt": "2026-08-11",
-      "kind": "short"
+      "kind": "short",
+      "description": "Les Alpha Schools ouvrent 50 nouveaux campus avec un modèle radical : moins de 2h par jour d'IA pour les matières fondamentales, et des guides pédagogiques payés au moins 100 000 dollars par an. Ce n'est pas une école…"
     },
     {
       "id": "4zk4i10BaOU",
       "title": "Sam Altman : la singularité IA est déjà là",
       "publishedAt": "2026-08-10",
-      "kind": "short"
+      "kind": "short",
+      "description": "Sam Altman affirme sans détour que nous vivons déjà la singularité de l'IA — ce moment où l'intelligence artificielle redéfinit pour toujours notre rapport à la machine. Mais pour d'autres experts, cette affirmation…"
     },
     {
       "id": "ORmHOipWX6E",
       "title": "MIT prouve : sans IA, tes notes s'effondrent",
       "publishedAt": "2026-08-07",
-      "kind": "short"
+      "kind": "short",
+      "description": "Des expériences menées au MIT et à Wharton révèlent un paradoxe inquiétant : l'IA générative améliore les performances à court terme, mais dès qu'on la retire, la persévérance s'effondre et les notes régressent. L'IA…"
     }
   ]
 }

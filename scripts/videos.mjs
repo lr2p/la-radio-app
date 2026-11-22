@@ -28,6 +28,14 @@
 // et sa description (« La Matinale de La Radio AI — … ») ; ce qui n'est ni l'un ni l'autre
 // (le direct 24/7, par exemple) reste dehors. Le champ `series` de videos.json dit
 // d'où vient chaque vidéo : marvin, matinale ou debrief.
+//
+// Chaque vidéo porte aussi un petit texte de présentation (`description`), tiré de sa
+// description YouTube : le premier paragraphe qui dit quelque chose (ni le titre redit, ni
+// la ligne de date, ni les sources, ni les hashtags) ; pour Le Débrief, son sommaire. Quand
+// la description n'en donne aucun, une phrase par série tient lieu de présentation.
+//   node scripts/videos.mjs --descriptions   relit, depuis le Mac, la page des vidéos qui
+//                                            n'ont pas encore de texte (le runner GitHub ne
+//                                            lit plus les pages /watch).
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -105,6 +113,112 @@ async function fiche(id) {
   }
 }
 
+// Le petit texte de présentation d'une vidéo, tiré de sa description YouTube.
+// Renvoie null quand la description ne dit rien de plus que le titre.
+const TEASER_MAX = 220;
+// Les paragraphes d'habillage du Journal : la ligne de date, la mention des voix générées…
+const HABILLAGE = /laRadio\.ai est le premier média|personnages fictifs|voix .{0,20}générée|Vidéo fabriquée par|^(La Matinale|Le Débrief|Le Debrief)( de La Radio AI)?\s*(du|[—–-])\s.*\d{4}/i;
+function teaser(description, title, series) {
+  const norm = (s) =>
+    (s || '')
+      .toLowerCase()
+      .replace(/#\w+/g, ' ')
+      .replace(/[^\p{L}\p{N}]+/gu, ' ')
+      .trim();
+  const t = norm(title);
+  const paras = (description || '')
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  let sommaire = [];
+  const puces = [];
+  let sources = [];
+  let candidate = null;
+  for (const p of paras) {
+    const lines = p.split('\n').map((l) => l.trim()).filter(Boolean);
+    const head = lines[0] ?? '';
+    if (/^[—–-]\s*AU SOMMAIRE/i.test(head)) {
+      sommaire = lines
+        .slice(1)
+        .map((l) => l.replace(/^\d+:\d{2}(?::\d{2})?\s*/, '').trim())
+        .filter(Boolean);
+      continue;
+    }
+    if (/^[—–-]\s*LES SOURCES/i.test(head)) {
+      sources = lines.slice(1);
+      continue;
+    }
+    if (/^[—–-]\s*[A-ZÉ]/.test(p)) break; // « — LA NOTE DE MARVIN — » et autres rubriques
+    if (/^•/.test(p)) {
+      puces.push(...lines.map((l) => l.replace(/^•\s*/, '').trim()).filter(Boolean));
+      continue;
+    }
+    if (candidate) continue;
+    if (/^(🎧|#|Retrouvez )/.test(p) || /https?:\/\//.test(p) || HABILLAGE.test(p)) continue;
+    const n = norm(p);
+    if (!n || n === t || (t.length >= 15 && (n.includes(t) || t.includes(n)))) continue;
+    candidate = p;
+  }
+  if (!candidate) {
+    if (sommaire.length > 1) candidate = `Au sommaire : ${sommaire.join(' · ')}.`;
+    else if (puces.length) candidate = puces[0];
+    else if (sources.length) {
+      // Un Short de La Matinale : son texte, ce sont les dépêches dont il part.
+      const outlets = [...new Set(sources.map(outlet).filter(Boolean))];
+      if (outlets.length) {
+        candidate = `L'analyse du jour de La Matinale, en une minute, d'après ${outlets.length > 1 ? 'les dépêches de ' : 'la dépêche de '}${listeFr(outlets)}.`;
+      }
+    }
+  }
+  if (!candidate) return null;
+  let s = candidate
+    .replace(/\s*Sources? et note de méthode en commentaire\.?/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (s.length > TEASER_MAX) s = `${s.slice(0, TEASER_MAX).replace(/\s+\S*$/, '')}…`;
+  return s || null;
+}
+
+const OUTLETS = {
+  'franceinfo.fr': 'franceinfo',
+  'lemonde.fr': 'Le Monde',
+  'lefigaro.fr': 'Le Figaro',
+  'liberation.fr': 'Libération',
+  'leparisien.fr': 'Le Parisien',
+  'bfmtv.com': 'BFMTV',
+  'francetvinfo.fr': 'franceinfo',
+  'ouest-france.fr': 'Ouest-France',
+  'lesechos.fr': 'Les Échos',
+  'huffingtonpost.fr': 'HuffPost',
+  '20minutes.fr': '20 Minutes',
+  'latribune.fr': 'La Tribune',
+  'rfi.fr': 'RFI',
+  'france24.com': 'France 24',
+  'courrierinternational.com': 'Courrier international',
+};
+function outlet(line) {
+  const m = /https?:\/\/(?:www\.)?([^/\s]+)/.exec(line);
+  if (!m) return null;
+  const host = m[1].toLowerCase();
+  for (const [dom, name] of Object.entries(OUTLETS)) if (host === dom || host.endsWith(`.${dom}`)) return name;
+  const base = host.split('.').slice(-2, -1)[0] ?? host;
+  return base.charAt(0).toUpperCase() + base.slice(1);
+}
+function listeFr(items) {
+  return items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} et ${items[items.length - 1]}`;
+}
+
+// À défaut de texte dans la description YouTube : une phrase par série.
+function presentationParDefaut(v) {
+  if (v.series === 'debrief') return 'Le bilan de la journée en trois analyses, raconté par Justine et Jérémy.';
+  if (v.series === 'matinale') {
+    return v.kind === 'short'
+      ? "L'analyse du jour de La Matinale, en une minute."
+      : "L'actualité du matin racontée par Justine et Jérémy, en vidéo.";
+  }
+  return 'Un disque et son histoire, racontés par Marvin, le DJ de La Radio AI.';
+}
+
 // La série d'une vidéo du Journal : celle des deux émissions nommée en premier.
 function serieJournal(texte) {
   const m = texte.search(/matinale/i);
@@ -126,6 +240,9 @@ async function main() {
   const memory = await readJson(memoryPath, { videos: [] });
   const byId = new Map(memory.videos.map((v) => [v.id, v]));
 
+  const relireDescriptions = process.argv.includes('--descriptions');
+  const args = process.argv.slice(2).filter((a) => a !== '--descriptions');
+
   let feed = [];
   try {
     feed = await rss();
@@ -135,7 +252,7 @@ async function main() {
 
   // Les vidéos nommées en argument que le flux ne donne pas (encore) : lues sur leur page.
   const vues = new Set(feed.map((v) => v.id));
-  for (const arg of process.argv.slice(2)) {
+  for (const arg of args) {
     const id = idNomme(arg);
     if (!id) {
       console.error('ni une URL YouTube ni un identifiant :', arg);
@@ -151,7 +268,7 @@ async function main() {
       console.error('pas encore publique, on ne la montre pas :', id, f.title);
       continue;
     }
-    feed.push({ id, title: f.title, publishedAt: f.publishedAt, seconds: f.seconds });
+    feed.push({ id, title: f.title, publishedAt: f.publishedAt, seconds: f.seconds, description: f.description });
   }
 
   for (const v of feed) {
@@ -169,7 +286,8 @@ async function main() {
     // chercher pour les vidéos d'avant Marvin, et on ne la cherche qu'une fois.
     const dur =
       v.seconds ?? (v.publishedAt >= SINCE ? prev.seconds ?? (await fiche(v.id))?.seconds ?? null : prev.seconds ?? null);
-    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds: dur });
+    const description = prev.description ?? teaser(v.description, v.title, 'marvin') ?? undefined;
+    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds: dur, description });
   }
 
   // Le Journal Vidéo : sa série se lit une fois sur la page, puis vit dans la mémoire.
@@ -200,7 +318,27 @@ async function main() {
     const seconds = f?.seconds ?? null;
     const series = serieJournal(`${v.title}\n${f?.description ?? v.description}`);
     if (!series) continue;
-    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds, series });
+    const description = teaser(f?.description || v.description, v.title, series) ?? undefined;
+    byId.set(v.id, { id: v.id, title: v.title, publishedAt: v.publishedAt, kind, seconds, series, description });
+  }
+
+  // Les textes de présentation manquants, relus sur la page de chaque vidéo (depuis le Mac).
+  if (relireDescriptions) {
+    let lus = 0;
+    for (const v of byId.values()) {
+      if (v.description) continue;
+      const f = await fiche(v.id);
+      if (!f) {
+        console.error('page illisible, pas de texte :', v.id, v.title);
+        continue;
+      }
+      const d = teaser(f.description, v.title, v.series ?? 'marvin');
+      if (d) {
+        v.description = d;
+        lus += 1;
+      } else console.error('description muette :', v.id, v.title);
+    }
+    console.log(`${lus} texte(s) de présentation relu(s)`);
   }
 
   // Le même jour, l'ordre est fixé par l'identifiant : sans ce départage, deux vidéos du
@@ -223,7 +361,10 @@ async function main() {
     .filter((v) =>
       v.series ? true : v.publishedAt >= SINCE && (v.seconds == null || v.seconds >= MIN_SECONDS),
     )
-    .map(({ id, title, publishedAt, kind, series }) => ({ id, title, publishedAt, kind, series: series ?? 'marvin' }));
+    .map(({ id, title, publishedAt, kind, series, description }) => {
+      const v = { id, title, publishedAt, kind, series: series ?? 'marvin' };
+      return { ...v, description: description ?? presentationParDefaut(v) };
+    });
   await mkdir(path.join(root, 'public'), { recursive: true });
   await writeFile(
     path.join(root, 'public', 'videos.json'),

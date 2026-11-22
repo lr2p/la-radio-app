@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { fetchPodcasts, type Podcast } from '../lib/api';
 import { useSettings } from '../lib/settings';
 import { lookFor } from '../shows';
+import { shortDescription } from '../lib/format';
 import { Spinner } from '../components/Icons';
 
 let cache: Podcast[] | null = null;
@@ -83,6 +84,7 @@ function ShowGrid({ items }: { items: Podcast[] }) {
                 {look.voice ? `${s.podcasts.by} ${look.voice} · ` : ''}
                 {s.podcasts.episodes(p.episodes)}
               </div>
+              {p.description && <p className="show-desc">{shortDescription(p.description, 140)}</p>}
             </div>
           </Link>
         );

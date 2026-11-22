@@ -379,6 +379,16 @@ p {
   font-size: 12px;
   margin-top: 4px;
 }
+.show-desc {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 6px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .back {
   display: inline-flex;
   align-items: center;
@@ -538,6 +548,16 @@ p {
   color: var(--muted);
   font-size: 12px;
   margin-top: 3px;
+}
+.video-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 6px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ---------- lecteur plein écran ---------- */

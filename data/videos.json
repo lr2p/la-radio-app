@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-11-22T18:03:25.984Z",
+  "updatedAt": "2026-11-23T07:45:11.234Z",
   "videos": [
+    {
+      "id": "DjVtq_oo7yU",
+      "title": "COP31 : échec du sommet climat, la communauté internationale divisée sur les énergies… #Shorts",
+      "publishedAt": "2026-11-23",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
+    },
+    {
+      "id": "Yn6oU9U6Zq4",
+      "title": "Tensions montantes entre l'Europe et la Russie après une série d'incidents militaires #Shorts",
+      "publishedAt": "2026-11-23",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de franceinfo."
+    },
+    {
+      "id": "eqT7qm5Qszg",
+      "title": "Choose France : 42,5 milliards d'euros d'investissements annoncés pour l'économie… #Shorts",
+      "publishedAt": "2026-11-23",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de France 24, franceinfo et Le Monde."
+    },
     {
       "id": "41L0q45HDvE",
       "title": "Présidentielle : François Ruffin jette l'éponge, la gauche en plein doute #Shorts",

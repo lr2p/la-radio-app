@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-11-23T07:45:11.234Z",
+  "updatedAt": "2026-11-24T17:51:01.025Z",
   "videos": [
+    {
+      "id": "NaVvicpVpYQ",
+      "title": "La France va créer des stocks stratégiques de terres rares pour réduire sa dépendance à… #Shorts",
+      "publishedAt": "2026-11-24",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo, France 24 et Le Monde."
+    },
+    {
+      "id": "jxPmmpA4vBE",
+      "title": "Nvidia : retour surprise de Jensen Huang, Wall Street s'envole — le géant des puces IA… #Shorts",
+      "publishedAt": "2026-11-24",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après la dépêche de Le Monde."
+    },
+    {
+      "id": "pAxNpuF0BLI",
+      "title": "Budget 2027 : revers au Sénat sur les heures supplémentaires, Lecornu appelle au… #Shorts",
+      "publishedAt": "2026-11-24",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
+    },
     {
       "id": "DjVtq_oo7yU",
       "title": "COP31 : échec du sommet climat, la communauté internationale divisée sur les énergies… #Shorts",

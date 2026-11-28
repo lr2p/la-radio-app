@@ -1,6 +1,15 @@
 {
-  "updatedAt": "2026-11-27T16:43:56.452Z",
+  "updatedAt": "2026-11-28T10:31:17.522Z",
   "videos": [
+    {
+      "id": "bgIifw7t7d4",
+      "title": "La France entre en récession et S&P menace de dégrader sa note #Shorts",
+      "publishedAt": "2026-11-28",
+      "kind": "short",
+      "seconds": null,
+      "series": "matinale",
+      "description": "L'analyse du jour de La Matinale, en une minute, d'après les dépêches de franceinfo et Le Monde."
+    },
     {
       "id": "H5wsgqmyB5E",
       "title": "Ukraine : Macron alerte, « abandonner l'Ukraine mettrait en péril notre sécurité » #Shorts",
